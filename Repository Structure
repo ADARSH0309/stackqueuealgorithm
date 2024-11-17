@@ -1,0 +1,15 @@
+- src/
+  - ArrayStack.java
+  - LinkedListStack.java
+  - ArrayQueue.java
+  - LinkedListQueue.java
+  - PrintQueue.java
+  - StringReversal.java
+- tests/
+  - TestArrayStack.java
+  - TestLinkedListStack.java
+  - TestArrayQueue.java
+  - TestLinkedListQueue.java
+  - TestPrintQueue.java
+- README.md
+- report.pdf (for algorithm analysis)
