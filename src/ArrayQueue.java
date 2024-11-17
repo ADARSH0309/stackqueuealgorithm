@@ -1,12 +1,10 @@
-import java.util.*;
+package src;
 
-// Class to implement queue using array
-class ArrayQueue {
-    private static final int SIZE = 100; // Define the maximum size of the queue
-    private int front, rear, count; // Variables to keep track of the front, rear, and count of elements in the queue
-    private int[] queue; // Array to hold queue elements
+public class ArrayQueue {
+    private static final int SIZE = 100;
+    private int front, rear, count;
+    private int[] queue;
 
-    // Constructor to initialize the queue
     public ArrayQueue() {
         front = 0;
         rear = -1;
@@ -14,51 +12,34 @@ class ArrayQueue {
         queue = new int[SIZE];
     }
 
-    // Method to add an element to the queue
     public void enqueue(int value) {
-        if (count >= SIZE) { // Check for queue overflow
+        if (count >= SIZE) {
             System.out.println("Queue Overflow");
-            return;
+        } else {
+            rear = (rear + 1) % SIZE;
+            queue[rear] = value;
+            count++;
         }
-        rear = (rear + 1) % SIZE; // Update the rear position circularly
-        queue[rear] = value; // Add the element to the queue
-        count++; // Increase the count of elements
     }
 
-    // Method to remove an element from the queue
     public void dequeue() {
-        if (count <= 0) { // Check for queue underflow
+        if (count <= 0) {
             System.out.println("Queue Underflow");
-            return;
+        } else {
+            front = (front + 1) % SIZE;
+            count--;
         }
-        front = (front + 1) % SIZE; // Update the front position circularly
-        count--; // Decrease the count of elements
     }
 
-    // Method to peek at the front element of the queue
     public int peek() {
-        if (count <= 0) { // Check if the queue is empty
+        if (count <= 0) {
             System.out.println("Queue is empty");
-            return -1; // Indicate empty queue
+            return -1;
         }
-        return queue[front]; // Return the front element of the queue
+        return queue[front];
     }
 
-    // Method to check if the queue is empty
     public boolean isEmpty() {
-        return count == 0; // Return true if the queue is empty
-    }
-
-    public static void main(String[] args) {
-        ArrayQueue q = new ArrayQueue();
-
-        // Example usage
-        q.enqueue(10); // Add 10 to the queue
-        q.enqueue(20); // Add 20 to the queue
-        System.out.println(q.peek()); // Should output 10
-        q.dequeue(); // Remove the front element (10)
-        System.out.println(q.peek()); // Should output 20
-        q.dequeue(); // Remove the front element (20)
-        System.out.println(q.isEmpty()); // Should output true (1)
+        return count == 0;
     }
 }
