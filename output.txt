@@ -1,0 +1,43 @@
+--- TestArrayStack ---
+Pushed 1 onto the stack.
+Pushed 2 onto the stack.
+Popped the top element.
+Peeked value: 1
+
+Expected Output: 1
+Actual Output: 1
+
+--- TestLinkedListStack ---
+Pushed 1 onto the linked list stack.
+Pushed 2 onto the linked list stack.
+Popped the top element.
+Peeked value: 1
+
+Expected Output: 1
+Actual Output: 1
+
+--- TestArrayQueue ---
+Enqueued 1 into the array-based queue.
+Enqueued 2 into the array-based queue.
+Dequeued the front element.
+Peeked value: 2
+
+Expected Output: 2
+Actual Output: 2
+
+--- TestLinkedListQueue ---
+Enqueued 1 into the linked list-based queue.
+Enqueued 2 into the linked list-based queue.
+Dequeued the front element.
+Peeked value: 2
+
+Expected Output: 2
+Actual Output: 2
+
+--- TestPrintQueue ---
+Enqueued document: "doc1"
+Enqueued document: "doc2"
+Dequeued document: "doc1"
+
+Expected Output: doc1
+Actual Output: doc1
